@@ -11,8 +11,6 @@ package topic
 // Output: 7 -> 0 -> 8
 // Explanation: 342 + 465 = 807.
 
-// ---
-
 // 概述
 
 func AddTwoNumbers(nums []int, target int) []int {
