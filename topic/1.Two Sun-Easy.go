@@ -1,6 +1,6 @@
-package topics
+package topic
 
-//Question
+// Question
 
 // Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -20,7 +20,7 @@ package topics
 // 不用求多組解，只需要一組解答
 // 回傳找到的那兩個元素
 
-func twoSum(nums []int, target int) []int {
+func TwoSum(nums []int, target int) []int {
 	var answer []int
 
 	for i := 0; i <= len(nums)-2; i++ {
