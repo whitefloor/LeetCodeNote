@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 // Question
 
@@ -39,7 +39,7 @@ func IsPalindrome(x int) bool {
 		return false
 	}
 
-	arr := make([]int, 0)
+	arr := []int{}
 	for x > 0 {
 		arr = append(arr, x%10)
 		x = x / 10
