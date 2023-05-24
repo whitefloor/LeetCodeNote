@@ -3,7 +3,7 @@ package leetcode
 // LeetCode：https://leetcode.com/problems/length-of-last-word/solutions/3543731/go-solution/
 // CookBook：https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0058.Length-of-Last-Word/?
 // Difficulty：Easy
-// Time Complexity：
+// Time Complexity：O(n)
 // Space Complexity：O(1)
 
 //note
