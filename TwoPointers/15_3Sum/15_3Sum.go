@@ -1,6 +1,8 @@
 package leetcode
 
-import "sort"
+import (
+	"sort"
+)
 
 // LeetCode：https://leetcode.com/problems/3sum/
 // CookBook：https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0015.3Sum/
