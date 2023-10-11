@@ -1,7 +1,7 @@
 package leetcode
 
 // LeetCode：https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
-// CookBook：解題的時候網站爆了，待補
+// CookBook：https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0083.Remove-Duplicates-from-Sorted-List/
 // Difficulty：Easy
 // Time Complexity：O(n)
 // Space Complexity：O(1)

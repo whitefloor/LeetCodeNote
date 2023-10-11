@@ -1,7 +1,7 @@
 package leetcode
 
 // LeetCode：https://leetcode.com/problems/middle-of-the-linked-list/description/
-// CookBook：解題的時候網站爆了，待補
+// CookBook：https://books.halfrost.com/leetcode/ChapterFour/0800~0899/0876.Middle-of-the-Linked-List/
 // Difficulty：Easy
 // Time Complexity：O(n)
 // Space Complexity：O(1)
