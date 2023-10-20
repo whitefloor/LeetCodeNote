@@ -4,7 +4,7 @@ package leetcode
 // CookBook：https://books.halfrost.com/leetcode/ChapterFour/0200~0299/0217.Contains-Duplicate/
 // Difficulty：Easy
 // Time Complexity：O(n)
-// Space Complexity：O(1)
+// Space Complexity：O(n)
 
 // note
 // 給一個 int array，如果其中有元素出現過兩次，返回 true，否則 false
