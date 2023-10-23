@@ -1,4 +1,4 @@
-package _44_BinaryTreePreorderTraversal
+package leetcode
 
 // LeetCode：https://leetcode.com/problems/binary-tree-preorder-traversal/description/
 // CookBook：https://books.halfrost.com/leetcode/ChapterFour/0100~0199/0144.Binary-Tree-Preorder-Traversal/
@@ -6,7 +6,7 @@ package _44_BinaryTreePreorderTraversal
 // Time Complexity：O(n)
 // Space Complexity：
 
-//note
+// note
 // preorder traversal = 前序遍歷
 // 順序是 根>左>右，簡單題，秒解
 
