@@ -1,5 +1,11 @@
 # LeetCodeNote
-練習leetcode的筆記
+練習 Leetcode 的筆記
 
 * LeetCode網址：https://leetcode.com/problemset/all/
 * LeetCode CookBook：https://books.halfrost.com/leetcode/
+
+# 刷題好文
+- https://ithelp.ithome.com.tw/users/20152262/ironman/5615
+
+# 輔助刷題網站
+- https://www.techinterviewhandbook.org/grind75?hours=40&weeks=4
