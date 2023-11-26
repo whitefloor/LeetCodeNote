@@ -6,7 +6,7 @@ package leetcode
 // Time Complexity：O(n)
 // Space Complexity：
 
-//note
+// note
 // 標準的DFS，不過是中序遍歷，順序是左、根、右
 // https://web.ntnu.edu.tw/~algo/BinaryTree.html
 // 參考解答學DFS的，以前沒處理過

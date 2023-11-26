@@ -6,7 +6,7 @@ package leetcode
 // Time Complexity：O(n)
 // Space Complexity：O(1)
 
-//note
+// note
 // 想法跟cookbook解法三是一樣的，不過沒解出來有看解答
 // 自己也有改寫code，自己比較看得懂
 // 用map的特性做key-value處理重複的字元改變index蠻厲害的
