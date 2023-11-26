@@ -35,10 +35,10 @@ func deleteDuplicates2(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	} else if head.Val == head.Next.Val {
-		head = deleteDuplicates(head.Next)
+		head = deleteDuplicates2(head.Next)
 		return head
 	} else {
-		head.Next = deleteDuplicates(head.Next)
+		head.Next = deleteDuplicates2(head.Next)
 		return head
 	}
 }
