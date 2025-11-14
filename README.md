@@ -1,8 +1,9 @@
 # LeetCodeNote
 練習 Leetcode 的筆記
 
-* LeetCode網址：https://leetcode.com/problemset/all/
+* LeetCode（刷題+競賽網站）：https://leetcode.com/problemset/all/
 * Golang LeetCode CookBook：https://books.halfrost.com/leetcode/
+* CodeForces（競賽網站）：https://codeforces.com/
 
 # 刷題好文
 - https://ithelp.ithome.com.tw/users/20152262/ironman/5615
