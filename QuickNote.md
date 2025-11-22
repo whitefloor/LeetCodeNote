@@ -73,10 +73,10 @@ type TreeNode struct {
 4. Level-order Traversal（層序遍歷）：用 BFS 比較好解
 ```
 func levelOrderBFS(root *TreeNode) []int {
-        //初始化 BFS Array
+    //初始化 BFS Array
 	queue := []*TreeNode{root}
 	
-        //BFS
+    //BFS
 	for len(queue) > 0 {
 	
 	//計算長度最後要頂出，最重要的部分
@@ -373,8 +373,8 @@ func partition(arr []int, low, high int) int {
 Quick Select 2
 
 func partition(nums []int, left, right, pivotIndex int) int {
-        //最外層利用隨機挑選 Pivot
-        //pivotIndex := left + rand.Intn(right-left+1)
+    //最外層利用隨機挑選 Pivot
+    //pivotIndex := left + rand.Intn(right-left+1)
     
 	pivot := nums[pivotIndex]
 	//這裡需要將 Pivot 丟到最右側，避免判斷錯誤
