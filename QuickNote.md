@@ -88,6 +88,8 @@ func levelOrderBFS(root *TreeNode) []int {
 	}
 }
 ```
+5. 在 Binary Tree 中找從 Target Node 開始 k 個距離的所有節點
+6. 在 Binary Tree 計算樹寬
 
 #### 變種樹
 1. Binary Search Tree：節點數值，左<中<右為特色
@@ -125,6 +127,7 @@ func leftBoundary(n int) int {
 ### 核心概念
 1. Breadth-First-Search（BFS）
 2. Depth-First-Search（DFS）
+3. 某些 Matrix 問題用 BFS 或 DFS 可以加上 Memorize 來記憶走過的路線
 ### 場景
 1. 處理 Matrix 問題時經常用到
 
@@ -263,6 +266,136 @@ func backtrackSample(nums []int) [][]int {
 1. 在一個給定的數值序列中，找到一個子序列，使得這個子序列元素的數值依次遞增  
    並且這個子序列的長度儘可能地大
 
+## Slide Window（滑動窗口）
+### 核心概念
+1. 與 Two Points 差別只在 Two Points 是鎖定左右邊界上元素  
+    而 Slide Window 是鎖定左右邊界內的所有 Element 做處理
+### 場景
+1. 在 Array 中固定或動態的鎖定範圍，來解題的一種技巧
+
+## Min/Max Heap
+### 核心概念
+1. Go 內有套件可以使用
+2. 注意 Min/Max 的實作在 Swap 的時候條件不一樣
+```
+//MinHeap 的實作方法
+type MinHeap []Element
+
+func (h MinHeap) Len() int           { return len(h) }
+func (h MinHeap) Less(i, j int) bool { return h[i].value < h[j].value }
+func (h MinHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *MinHeap) Push(x interface{}) {
+    *h = append(*h, x.(Element))
+}
+
+func (h *MinHeap) Pop() interface{} {
+    old := *h
+    n := len(old)
+    x := old[n-1]
+    *h = old[0 : n-1]
+    return x
+}
+```
+### 場景
+1. Min/Max Heap 是一種優先佇列，頂點總是會存著最小/大值
+
+## Merge Sort
+### 核心概念
+1. 使用 Divide and Conquer（分治法）的高效演算排序法
+2. 利用輔助記憶體切割子陣列進行兩兩排序
+```
+//呼叫此 funciton 前記得要切割一半，此為 Linked List 範例
+func merge(left, right *ListNode) *ListNode {
+    dummy := &ListNode{}
+    tail := dummy
+    
+    //比大小排序
+    for left != nil && right != nil {
+        if left.Val < right.Val {
+            tail.Next = left
+            left = left.Next
+        } else {
+            tail.Next = right
+            right = right.Next
+        }
+        tail = tail.Next
+    }
+
+    //合併剩餘部分
+    if left != nil {
+        tail.Next = left
+    } else {
+        tail.Next = right
+    }
+
+    return dummy.Next
+}
+```
+### 場景
+1. 需要進行合併或是重新排序的數列
+
+## Quick Sort + Quick Select
+### 核心概念
+1. 使用 Divide and Conquer（分治法）的高效演算排序法
+2. 與 Merge Sort 區別為原地排序，空間僅需遞迴調時用到 O(log n)
+3. Quick Sort 排序穩定性相較 Merge Sort 稍微較差    
+    原因是 Pivot 選不好時間有可能變成 O(n²)
+```
+Quick Sort
+
+func QuickSort(arr []int, low, high int) {
+	if low < high {
+		pivotIndex := partition(arr, low, high)
+		QuickSort(arr, low, pivotIndex-1)
+		QuickSort(arr, pivotIndex+1, high)
+	}
+}
+
+//這是利用末尾直接作為 Pivot 而且不用交換的方式
+//同時也是這段能夠作為 Quick Select 的實現方法
+func partition(arr []int, low, high int) int {
+	pivot := arr[high]
+	i := low - 1
+
+	for j := low; j < high; j++ {
+		if arr[j] <= pivot {
+			i++
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+	}
+	arr[i+1], arr[high] = arr[high], arr[i+1]
+	return i + 1
+}
+```
+
+```
+Quick Select 2
+
+func partition(nums []int, left, right, pivotIndex int) int {
+        //最外層利用隨機挑選 Pivot
+        //pivotIndex := left + rand.Intn(right-left+1)
+    
+	pivot := nums[pivotIndex]
+	//這裡需要將 Pivot 丟到最右側，避免判斷錯誤
+	nums[pivotIndex], nums[right] = nums[right], nums[pivotIndex]
+	storedIndex := left
+	for i := left; i < right; i++ {
+		if nums[i] < pivot {
+			nums[i], nums[storedIndex] = nums[storedIndex], nums[i]
+			storedIndex++
+		}
+	}
+	//最後找到左側（較小）邊界把中間點切換回來
+	nums[right], nums[storedIndex] = nums[storedIndex], nums[right]
+	return storedIndex
+}
+```
+### 場景
+1. 需要進行合併或是重新排序的數列
+2. Quick Select 利用 Quick Sort 尋找 Pivot 的方法迅速在未排序數列中  
+    找到第 k 個大小的數
+
 # 常用套件
 ## sort
 ```
@@ -289,6 +422,24 @@ slices.Sort(sortedRune)
 
 ```
 sort.SliceStable(uniq, func(i, j int) bool {}
+```
+
+## rand
+```
+rand.Seed(time.Now().UnixNano())
+```
+
+```
+rand.Intn(this.size)
+```
+
+## unicode
+```
+unicode.IsSpace(ch)
+```
+
+```
+unicode.IsDigit(ch)
 ```
 
 # 常用模版
