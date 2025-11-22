@@ -18,7 +18,7 @@
 3. Greedy
 4. Backtrack
 
-# 刷提提升 Runtime 小技巧與寫題好習慣
+# 刷題提升 Runtime 小技巧與寫題好習慣
 1. 盡量不要用 hash map，大部分題目也確實用不到，善加利用 array
 2. 能預先 allocate array space 最好，在 Go 裡用 append 當空間不足時會重新分配空間並進行拷貝
 3. 不要用神奇數字或名字命名，也讓你的 code 比較易懂
